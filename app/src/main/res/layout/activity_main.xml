@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:background="#ffffff"
+        android:id="@+id/ImageContainer">
+        <Button
+            android:id="@+id/bt_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pickPhotofromGallery"
+            android:text="Gallery"
+            ></Button>
+        <Button
+            android:id="@+id/bt_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bt_gallery"
+            android:onClick="takePhotofromCam"
+            android:text="Camera"
+            />
+
+        <Button
+            android:text="Save AS PDF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/button2"
+            android:textSize="18dp"
+            android:onClick="GeneratePDF"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:clickable="true"
+            android:onClick="processImage"
+            android:id="@+id/OCRButtonContainer"
+            android:layout_above="@+id/button2"
+            android:layout_alignParentStart="true">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create OCR"
+                android:id="@+id/OCRbutton"
+                android:textSize="18dp"
+                android:clickable="true"
+                android:onClick="processImage"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/OCRButtonContainer"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e4e3e3"
+        android:id="@+id/OCRTextContainer">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OCR Text will appear here"
+            android:id="@+id/OCRTextView"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="#dedede"
+            android:textColor="#a3a3a3" />
+
+    </RelativeLayout>
+</LinearLayout>
